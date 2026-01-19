@@ -28,5 +28,37 @@ class Persona(var peso : Double, var altura : Double) {
         result = 31 * result + imc.hashCode()
         return result
     }
+
+    fun saludar() : String {
+        return "Hola $nombre"
+    }
+
+    fun alturaEncimaMedia() : Boolean {
+        return if (altura >= 1.75) {
+            true
+        } else {
+            false
+        }
+    }
+
+    fun pesoEncimaMedia() : Boolean {
+        return if (peso >= 70) {
+            true
+        } else {
+            false
+        }
+    }
+
+
+    fun obtenerDescImc(): String {
+        return when {
+            imc < 18.5 -> "peso insuficiente"
+            imc in 18.5..24.9 -> "peso saludable"
+            imc in 25.0..29.9 -> "sobrepeso"
+            imc >= 30.0 -> "obesidad"
+            else -> "Error en cálculo"
+        }
+    }
+
 }
 

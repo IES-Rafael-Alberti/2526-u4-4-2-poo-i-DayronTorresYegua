@@ -38,4 +38,10 @@ fun main() {
     println(persona3)
 
     println(persona2 == persona3)
+
+    println(persona1.saludar())
+    println(persona1.alturaEncimaMedia())
+    println(persona1.pesoEncimaMedia())
+
+    println(persona1.obtenerDescImc())
 }
